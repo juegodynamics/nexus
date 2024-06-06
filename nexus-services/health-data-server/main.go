@@ -171,3 +171,7 @@ func getEnv(key, defaultValue string) string {
 	}
 	return defaultValue
 }
+
+type Task struct {
+	ID string `graphql:""`
+}

@@ -42,7 +42,11 @@ const App: React.FC = () => {
                     path="/:projectId/:articleId"
                     element={
                       <div
-                        style={{ paddingLeft: "10vw", paddingRight: "20vw" }}
+                        style={{
+                          paddingLeft: "2vw",
+                          paddingRight: "5vw",
+                          width: "80vw",
+                        }}
                       >
                         <Article />
                       </div>

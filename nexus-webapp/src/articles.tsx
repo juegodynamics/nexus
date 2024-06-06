@@ -3,6 +3,7 @@ import PatientCard from "./components/fhircards/PatientCard";
 import { patient1 } from "./data";
 import Home from "./articles/playground/1.Home.mdx";
 import Fields from "./articles/physics/1.Fields.mdx";
+import { FlowPlayground } from "./articles/playground/flows/flows";
 
 export interface ArticleMeta {
   id: string;
@@ -25,8 +26,8 @@ const articles: Record<string, ArticleMeta[]> = {
       children: [
         {
           id: "article-1-1",
-          title: "Sub Introduction 1",
-          content: "This is the content for sub introduction 1.",
+          title: "Flow Playground",
+          content: <FlowPlayground />,
           children: [
             {
               id: "article-1-1-1",
