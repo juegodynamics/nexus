@@ -14,6 +14,7 @@ interface NestedListProps {
   articles: Article[];
   setSelectedArticle: (id: string) => void;
   selectedArticle: string;
+  selectedProject: string;
   level?: number;
 }
 
@@ -21,6 +22,7 @@ const NestedList: React.FC<NestedListProps> = ({
   articles,
   setSelectedArticle,
   selectedArticle,
+  selectedProject,
   level = 0,
 }) => {
   const [open, setOpen] = useState<{ [key: string]: boolean }>({});
@@ -34,7 +36,6 @@ const NestedList: React.FC<NestedListProps> = ({
       dense
       sx={{
         pl: 1,
-        pt: 8,
       }}
     >
       {articles.map((article) => (
@@ -42,7 +43,7 @@ const NestedList: React.FC<NestedListProps> = ({
           <ListItem
             button
             component={Link}
-            to={`/${article.id}`}
+            to={`/${selectedProject}/${article.id}`}
             onClick={() => setSelectedArticle(article.id)}
             selected={selectedArticle === article.id}
             sx={{
@@ -66,6 +67,7 @@ const NestedList: React.FC<NestedListProps> = ({
                 articles={article.children}
                 setSelectedArticle={setSelectedArticle}
                 selectedArticle={selectedArticle}
+                selectedProject={selectedProject}
                 level={level + 1}
               />
             </Collapse>

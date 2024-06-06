@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
+    "@react-three/fiber": "^8.16.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +17,8 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "arwes": "^1.0.0-next.24051001",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.1.0",
     "fhir": "^4.12.0",
     "katex": "^0.16.10",
     "react": "^18.3.1",
@@ -23,13 +26,14 @@
     "react-katex": "^3.0.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "three": "^0.165.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -55,6 +59,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
     "@storybook/addon-essentials": "^8.1.5",
     "@storybook/addon-interactions": "^8.1.5",
     "@storybook/addon-links": "^8.1.5",
@@ -64,9 +70,16 @@
     "@storybook/react": "^8.1.5",
     "@storybook/react-webpack5": "^8.1.5",
     "@storybook/test": "^8.1.5",
+    "@types/d3-scale": "^4.0.8",
+    "@types/d3-scale-chromatic": "^3.0.3",
+    "@types/three": "^0.165.0",
+    "customize-cra": "^1.0.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "file-loader": "^6.2.0",
     "prop-types": "^15.8.1",
+    "react-app-rewired": "^2.2.1",
     "storybook": "^8.1.5",
+    "url-loader": "^4.1.1",
     "webpack": "^5.91.0"
   }
 }
