@@ -2,7 +2,7 @@ import FadeBlock from "./components/FadeBlock";
 import PatientCard from "./components/fhircards/PatientCard";
 import { patient1 } from "./data";
 import Home from "./articles/playground/1.Home.mdx";
-import Fields from "./articles/physics/1.Fields.mdx";
+import HyperbolicSpace from "./articles/physics/spacetime/1.HyperbolicSpace.mdx";
 import { FlowPlayground } from "./articles/playground/flows/flows";
 
 export interface ArticleMeta {
@@ -52,10 +52,15 @@ const articles: Record<string, ArticleMeta[]> = {
   ],
   physics: [
     {
-      id: "article-fields",
-      title: "Fields",
-      content: <Fields />,
+      id: "article-hyperbolic",
+      title: "Hyperbolic Spaces",
+      content: <HyperbolicSpace />,
     },
+    // {`
+    //   id: "article-fields",
+    //   title: "Fields",
+    //   content: <Fields />,
+    // },`
   ],
 };
 

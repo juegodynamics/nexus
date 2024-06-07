@@ -1,6 +1,10 @@
 package mock
 
-import "github.com/graphql-go/graphql"
+import (
+	"reflect"
+
+	"github.com/graphql-go/graphql"
+)
 
 // @graphql
 type Task struct {
@@ -19,9 +23,24 @@ func (Task) ToGraphQLObject() *graphql.Object {
 	})
 }
 
+func ToGraphQLObject(object interface{}) *graphql.Object {
+fields:
+	graphql.Fields{}
+	reflectObject := reflect.TypeOf(object)
+	for i := 0; i < reflectObject.NumField(); i++ {
+		reflectField := reflectObject.Field(i)
+		fields[reflectField.Name] = reflectField.Type
+	}
+}
+
+func reflectTypeToGraphQLType(reflectType reflect.Type) graphql.Type
+
 // @graphql:end
 
-type Planet struct {
-	ID    string `json:"id,omitempty"`
-	Title string `json:"title,omitempty"`
+// @jsonschema
+type User struct {
+	ID   string `json:"id,omitempty"`
+	Name string `json:"title,omitempty"`
 }
+
+// @jsonschema:start
