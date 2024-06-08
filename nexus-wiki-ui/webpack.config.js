@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/", // Ensure this is set to root
+    publicPath: "/nexus/", // Ensure this is set to your repo name
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
@@ -31,19 +31,35 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.mdx$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react",
+                "@babel/preset-typescript",
+              ],
+            },
+          },
+          "@mdx-js/loader",
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html", // Make sure this path is correct
+      template: "./public/index.html",
     }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"), // Serve static files from 'public' directory
+      directory: path.join(__dirname, "public"),
     },
     compress: true,
     port: 9000,
-    historyApiFallback: true, // Serve index.html for all routes
+    historyApiFallback: true,
   },
 };

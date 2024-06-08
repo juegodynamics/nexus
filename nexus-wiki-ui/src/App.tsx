@@ -37,11 +37,11 @@ const App: React.FC = () => {
             <Box component="main" sx={{ flexGrow: 1, p: 3, pt: 8 }}>
               <Routes>
                 <Route
-                  path="/"
+                  path="/nexus"
                   element={<Typography variant="h1">Welcome</Typography>}
                 />
                 <Route
-                  path="/:projectId/:pageId"
+                  path="/nexus/:projectId/:pageId"
                   element={
                     <div
                       style={{

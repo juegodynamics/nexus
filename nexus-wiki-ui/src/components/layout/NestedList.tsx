@@ -37,7 +37,7 @@ const NestedList: React.FC<NestedListProps> = ({
           <ListItem
             button
             component={Link}
-            to={`/${selectedProject}/${article.id}`}
+            to={`/nexus/${selectedProject}/${article.id}`}
             onClick={() => setSelectedArticle(article.id)}
             selected={selectedArticle === article.id}
             sx={{

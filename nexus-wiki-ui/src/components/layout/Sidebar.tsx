@@ -62,7 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onChange={(event) => {
               setSelectedProject(event.target.value);
 
-              navigate(`/${event.target.value}`);
+              navigate(`/nexus/${event.target.value}`);
             }}
           >
             {Object.keys(pages).map((project) => (
