@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/nexus/", // Ensure this is set to your repo name
+    publicPath: "/nexus", // Ensure this is set to your repo name
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],

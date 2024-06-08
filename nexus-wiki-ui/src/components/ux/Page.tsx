@@ -5,15 +5,13 @@ import { Typography } from "@mui/material";
 import { findPageById } from "../../utils/findPageById";
 import { pages } from "../../pages";
 
-export const Page: React.FC = () => {
-  const { projectId, pageId } = useParams<{
-    projectId: string;
-    pageId: string;
-  }>();
-  const page = findPageById(
-    pageId || "",
-    pages[projectId || Object.keys(pages)[0]]
-  );
+export interface PageParams {
+  projectId: string;
+  pageId: string;
+}
+
+export const Page: React.FC<PageParams> = ({ projectId, pageId }) => {
+  const page = findPageById(pageId, pages[projectId]);
 
   if (!page) {
     return <Typography variant="h1">Page Not Found</Typography>;

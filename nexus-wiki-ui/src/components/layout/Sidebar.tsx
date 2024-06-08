@@ -23,6 +23,8 @@ export interface SidebarProps {
   setSelectedProject: (project: string) => void;
 }
 
+export const DRAWER_WIDTH = 240;
+
 export const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   selectedArticle,
@@ -30,18 +32,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   selectedProject,
   setSelectedProject,
 }) => {
-  const navigate = useNavigate();
-
   return (
     <Drawer
-      variant="permanent"
-      // open={isOpen}
+      variant="temporary"
+      open={isOpen}
+      hideBackdrop
       sx={{
-        width: 240,
+        width: DRAWER_WIDTH,
         flexShrink: 0,
         zIndex: 0,
         [`& .MuiDrawer-paper`]: {
-          width: 240,
+          width: DRAWER_WIDTH,
           boxSizing: "border-box",
           boxShadow: "inset -10px 0 10px -10px rgba(37, 50, 56, 0.7)",
           background: "rgba(0,0,0,0)",
@@ -61,8 +62,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             value={selectedProject}
             onChange={(event) => {
               setSelectedProject(event.target.value);
-
-              navigate(`/nexus/${event.target.value}`);
             }}
           >
             {Object.keys(pages).map((project) => (
